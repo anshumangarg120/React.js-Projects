@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
 
-  const [counter, setCounter] = useState(15)
+ let [counter, setCounter] = useState(15)
  
   // let counter = 15
 
@@ -14,7 +14,11 @@ function App() {
    counter = counter + 1
    setCounter(counter)
   }
-
+  const removeValue = () => {
+    console.log("Clicked", counter)
+   counter = counter - 1
+   setCounter(counter)
+  }
   return (
     <>
       <h1>Project: 1 </h1>
@@ -22,7 +26,8 @@ function App() {
       <button
       onClick={addValue}>Add Value</button>
       <br />
-      <button>Remove Value</button>
+      <button
+       onClick={removeValue}>Remove Value</button>
     </>
   )
 }
